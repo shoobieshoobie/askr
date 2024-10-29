@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bv84delqx323b"]
 
-[ext_resource type="PackedScene" uid="uid://kv0edv5n4m5p" path="res://users_screen.tscn" id="1_ay2k5"]
+[ext_resource type="Script" path="res://app.gd" id="1_ndfwa"]
 
 [sub_resource type="Theme" id="Theme_bfjvu"]
 Global/colors/DrabBrown = Color(0.290196, 0.254902, 0.164706, 1)
@@ -19,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_bfjvu")
+script = ExtResource("1_ndfwa")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -29,20 +30,3 @@ offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.129412, 0.160784, 0.231373, 1)
-
-[node name="UsersScreen" parent="." instance=ExtResource("1_ay2k5")]
-visible = false
-layout_mode = 0
-anchors_preset = 0
-
-[node name="ModulesScreen" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32

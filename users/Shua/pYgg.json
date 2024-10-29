@@ -1,0 +1,24 @@
+{
+    "meta": {
+        "title": "pYgg",
+        "code": 0,
+        "description": "The first ever askr module.",
+        "tags": ["first", "onlyl", "intrigue"]
+    },
+    "content": {
+        "currentRoom": "",
+        "playerCharacter": {
+            "characterName": "",
+            "inventory": []
+        },
+        "characters": {
+
+        },
+        "objects": {
+
+        },
+        "rooms": {
+            
+        }
+    }
+}

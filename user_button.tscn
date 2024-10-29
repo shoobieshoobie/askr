@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1m7o0fngxyry"]
+[gd_scene load_steps=3 format=3 uid="uid://b1m7o0fngxyry"]
+
+[ext_resource type="Script" path="res://user_button.gd" id="1_7np64"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0uud"]
 bg_color = Color(0.235294, 0.286275, 0.419608, 1)
@@ -14,3 +16,6 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_x0uud")
 text = "User
 # Modules"
+script = ExtResource("1_7np64")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

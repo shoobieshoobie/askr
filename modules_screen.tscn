@@ -1,0 +1,252 @@
+[gd_scene load_steps=15 format=3 uid="uid://bgvvi5nnkq0f2"]
+
+[ext_resource type="FontFile" uid="uid://p1vx77ltltmt" path="res://fonts/MedulaOne-Regular.ttf" id="1_1pjcc"]
+[ext_resource type="FontFile" uid="uid://d4agtci858nu4" path="res://fonts/NovaMono-Regular.ttf" id="2_7ecgg"]
+[ext_resource type="Script" path="res://user_name.gd" id="2_mb5sg"]
+[ext_resource type="Script" path="res://module_list.gd" id="3_4ds8y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ni6eo"]
+bg_color = Color(1, 0.862745, 0.478431, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_bcn73"]
+font = ExtResource("1_1pjcc")
+font_size = 32
+font_color = Color(0.235294, 0.286275, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_740he"]
+bg_color = Color(0.235294, 0.286275, 0.419608, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_kqvbo"]
+font = ExtResource("1_1pjcc")
+font_size = 32
+font_color = Color(0.235294, 0.286275, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwbjm"]
+bg_color = Color(0.235294, 0.286275, 0.419608, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_synk3"]
+font = ExtResource("1_1pjcc")
+font_size = 32
+font_color = Color(0.235294, 0.286275, 0.419608, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pgr8r"]
+font = ExtResource("1_1pjcc")
+font_size = 64
+font_color = Color(0.75, 0.75, 0.75, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0t7sd"]
+font = ExtResource("1_1pjcc")
+font_size = 64
+font_color = Color(0.75, 0.75, 0.75, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4jmyc"]
+font = ExtResource("2_7ecgg")
+font_color = Color(0.75, 0.75, 0.75, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55xjt"]
+bg_color = Color(0.235294, 0.286275, 0.419608, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="ModulesScreen" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ni6eo")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sort"
+label_settings = SubResource("LabelSettings_bcn73")
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_740he")
+item_count = 5
+popup/item_0/text = "Alphabetical (up)"
+popup/item_1/text = "Most Recent"
+popup/item_1/id = 1
+popup/item_2/text = "Code (up)"
+popup/item_2/id = 2
+popup/item_3/text = "Code (down)"
+popup/item_3/id = 3
+popup/item_4/text = "Alphabetical (down)"
+popup/item_4/id = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Search"
+label_settings = SubResource("LabelSettings_kqvbo")
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qwbjm")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Filters"
+label_settings = SubResource("LabelSettings_synk3")
+
+[node name="DownloadsCheck" type="CheckBox" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.235294, 0.286275, 0.419608, 1)
+theme_override_fonts/font = ExtResource("1_1pjcc")
+theme_override_font_sizes/font_size = 24
+text = "Downloads"
+
+[node name="FavoritesCheck" type="CheckBox" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.235294, 0.286275, 0.419608, 1)
+theme_override_fonts/font = ExtResource("1_1pjcc")
+theme_override_font_sizes/font_size = 24
+text = "Favorites"
+
+[node name="DependenciesCheck" type="CheckBox" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.235294, 0.286275, 0.419608, 1)
+theme_override_fonts/font = ExtResource("1_1pjcc")
+theme_override_font_sizes/font_size = 24
+text = "Dependencies
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="ModulesHeader" type="HBoxContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer3/ModulesHeader"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+text = "Modules"
+label_settings = SubResource("LabelSettings_pgr8r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer3/ModulesHeader"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="UserName" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer3/ModulesHeader/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_0t7sd")
+script = ExtResource("2_mb5sg")
+
+[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer3/ModulesHeader/VBoxContainer"]
+layout_mode = 2
+text = "change user"
+label_settings = SubResource("LabelSettings_4jmyc")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_right = 128
+
+[node name="SourceToggle" type="HBoxContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Local" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/SourceToggle"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_1pjcc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_55xjt")
+text = "Local"
+
+[node name="Remote" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/SourceToggle"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Coming Soon!"
+theme_override_fonts/font = ExtResource("1_1pjcc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_55xjt")
+text = "Remote"
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="ModuleList" type="GridContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 2
+script = ExtResource("3_4ds8y")

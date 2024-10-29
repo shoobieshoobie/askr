@@ -14,5 +14,6 @@ func _ready():
 		add_child(new_user)
 		var user_name = user
 		var module_count = DirAccess.open(users_folder + user).get_files().size()
+		new_user.username = user
 		new_user.text = user_name + "\n" + str(module_count) + " Modules"
 	add_child(add_user_button)
